@@ -1,0 +1,1461 @@
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* Font Family Variables */
+        --nms-font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        --nms-font-family-secondary: "Inter", Arial, sans-serif;
+        
+        /* Text Heading Variables */
+        --nms-text-heading-sm-mobile-size: 16px;
+        --nms-text-heading-sm-mobile-line-height: 1.4;
+        --nms-text-heading-sm-mobile-tracking: 0.02em;
+        --nms-text-heading-sm-weight: 600;
+        
+        --nms-text-heading-md-size: 20px;
+        --nms-text-heading-md-line-height: 1.3;
+        --nms-text-heading-md-tracking: 0.01em;
+        --nms-text-heading-md-weight: 700;
+        
+        --nms-text-heading-lg-size: 28px;
+        --nms-text-heading-lg-line-height: 1.2;
+        --nms-text-heading-lg-tracking: -0.01em;
+        --nms-text-heading-lg-weight: 800;
+        
+        /* Body Text Variables */
+        --nms-text-body-sm-size: 12px;
+        --nms-text-body-sm-line-height: 1.5;
+        --nms-text-body-sm-weight: 400;
+        
+        --nms-text-body-md-size: 14px;
+        --nms-text-body-md-line-height: 1.5;
+        --nms-text-body-md-weight: 400;
+        
+        /* Color Variables */
+        --nms-color-primary: #ff7f00;
+        --nms-color-text-primary: #333;
+        --nms-color-text-secondary: #666;
+        --nms-color-background: #fff;
+        
+        /* Spacing Variables */
+        --nms-space-xs: 8px;
+        --nms-space-sm: 12px;
+        --nms-space-md: 16px;
+        --nms-space-lg: 24px;
+        --nms-space-xl: 32px;
+      }
+      
+      body {
+        font-family: var(--nms-font-family-primary);
+        background: var(--nms-color-background);
+      }
+
+      /* Navbar Styles */
+      .top-navbar {
+        background: #f8f9fa;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .nav-link-item {
+        padding: var(--nms-space-sm) var(--nms-space-md);
+        color: var(--nms-color-text-primary);
+        font-family: var(--nms-font-family-primary);
+        font-size: var(--nms-text-body-md-size);
+        font-weight: var(--nms-text-heading-sm-weight);
+        line-height: var(--nms-text-heading-sm-mobile-line-height);
+        letter-spacing: var(--nms-text-heading-sm-mobile-tracking);
+        cursor: pointer;
+        transition: all 0.3s;
+        border-radius: var(--nms-space-xs);
+        position: relative;
+      }
+
+      .nav-link-item:hover,
+      .nav-link-item.active {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 127, 0, 0.1),
+          rgba(255, 127, 0, 0.05)
+        );
+        color: #ff7f00;
+      }
+
+      .nav-link-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: #ff7f00;
+        transition: width 0.3s;
+      }
+
+      .nav-link-item:hover::after,
+      .nav-link-item.active::after {
+        width: 80%;
+      }
+
+      /* Dropdown Mega Menu */
+      .mega-dropdown-wrapper {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 50vw;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
+        padding: 30px;
+        margin-top: 10px;
+      }
+      /* ===== DROPDOWN TRANSITION ===== */
+.mega-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  display: block !important; /* override bootstrap */
+}
+
+/* Visible state */
+.mega-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .mega-menu {
+    position: static !important;
+    transform: none !important;
+  }
+}
+
+
+      .tab-pills {
+        background: #f5f5f5;
+        border-radius: 50px;
+        padding: 4px;
+        width: fit-content;
+      }
+
+      .tab-pills .btn {
+        border: none;
+        background: transparent;
+        padding: 10px 28px;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 14px;
+        color: #666;
+        transition: all 0.3s;
+      }
+
+      .tab-pills .btn.active {
+        background: #1a1a1a;
+        color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .featured-sidebar {
+        border-right: 1px solid #e5e5e5;
+      }
+
+      .featured-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .feature-link {
+        padding: 12px 0;
+        font-size: 15px;
+        color: #1a1a1a;
+        cursor: pointer;
+        transition: all 0.2s;
+        border-bottom: 1px solid #f5f5f5;
+      }
+
+      .feature-link:hover {
+        color: #ff7f00;
+        padding-left: 8px;
+      }
+
+      .product-item {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-align: center;
+        border: 1px solid #f0f0f0;
+      }
+
+      .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border-color: #ff7f00;
+      }
+
+      .product-item img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+
+      .product-title {
+        font-family: var(--nms-font-family-primary);
+        font-size: var(--nms-text-heading-sm-mobile-size);
+        font-weight: var(--nms-text-heading-sm-weight);
+        line-height: var(--nms-text-heading-sm-mobile-line-height);
+        letter-spacing: var(--nms-text-heading-sm-mobile-tracking);
+        color: var(--nms-color-text-primary);
+        margin: 0;
+      }
+
+      /* Slider Styles */
+      .slider-container {
+        position: relative;
+        max-width: 830px 104px;
+        margin: 0 auto;
+      }
+
+      .slider-track {
+        display: flex;
+        gap: 8px;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        padding: 5px 5px;
+      }
+
+      .category-item {
+        flex: 0 0 auto;
+        width: 150px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .category-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 10%;
+        margin: 0 auto;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .category-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .category-name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 10px;
+        font-weight: 600;
+        text-align: center;
+        padding: 2px 4px;
+        border-radius: 0 0 6px 6px;
+      }
+
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid #d9d9d9;
+        background: white;
+        cursor: pointer;
+        transition: all 0.3s;
+        z-index: 10;
+      }
+
+      .slider-btn:hover {
+        border-color: #ff7f00;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .slider-btn.disabled {
+        opacity: 0.3;
+        pointer-events: none;
+      }
+      .py-5 {
+        padding-top: 0% !important;
+        padding-bottom: 3rem !important;
+      }
+
+      .slider-btn.prev {
+        left: -5px;
+      }
+      .slider-btn.next {
+        right: -5px;
+      }
+      .flip-countdown-container {
+        background: linear-gradient(135deg, #d54a0c 0%, #ff5722 100%);
+        color: white;
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .countdown-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 10px;
+      }
+
+      .nms-countdown-title {
+        font-family: var(--nms-font-family-primary);
+        font-size: var(--nms-text-heading-md-size);
+        font-weight: var(--nms-text-heading-md-weight);
+        line-height: var(--nms-text-heading-md-line-height);
+        letter-spacing: var(--nms-text-heading-md-tracking);
+        margin: 0;
+      }
+
+      .nms-countdown-description {
+        font-family: var(--nms-font-family-primary);
+        font-size: var(--nms-text-body-sm-size);
+        line-height: var(--nms-text-body-sm-line-height);
+        font-weight: var(--nms-text-body-sm-weight);
+        margin: 0;
+        opacity: 0.9;
+      }
+
+      .flip-timer {
+        margin: 0;
+      }
+
+      .flip-unit {
+        text-align: center;
+        margin: 0 3px;
+      }
+
+      .flip-card {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 8px 12px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 6px;
+        min-width: 45px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .flip-number {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .flip-label {
+        font-size: 8px;
+        font-weight: 600;
+        text-transform: uppercase;
+        opacity: 0.8;
+        margin-top: 2px;
+      }
+
+      .separator {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 0 5px;
+        margin-top: 0;
+      }
+
+      .unit-label {
+        display: none;
+      }
+      .navbar-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 0;
+      }
+      .search-container {
+        position: relative;
+        width: 200px;
+      }
+      .search-container input {
+        width: 100%;
+        height: 38px;
+        border-radius: 50px;
+        padding-left: 15px;
+        padding-right: 40px;
+        border: 1px solid #ccc;
+        transition: all 0.3s ease;
+      }
+      .search-container input:focus {
+        border-color: #fd6d0d;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      .search-container a {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        background-color: rgba(211, 209, 190, 0.68);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
+      .navbar-section a.account-cart {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+      .navbar-section a.account-cart:hover {
+        color: #fd6d0d;
+      }
+      .navbar-section .badge {
+        font-size: 0.65rem;
+      }
+      /* Number flip animation */
+      .flip-number {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .flip-number.flip {
+        animation: numberFlip 0.4s ease-in-out;
+      }/* Updated Countdown Styles */
+      .flip-countdown-container {
+        background: linear-gradient(135deg, #d54a0c 0%, #ff5722 100%);
+        color: white;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .nms-countdown-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .nms-countdown-description {
+        font-size: 16px;
+        margin: 0 0 20px 0;
+        opacity: 0.9;
+        font-weight: 500;
+      }
+
+      .flip-timer {
+        margin: 0;
+      }
+
+      .flip-unit {
+        text-align: center;
+        margin: 0 5px;
+      }
+
+      .flip-card {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 15px 20px;
+        font-size: 32px;
+        font-weight: bold;
+        
+        min-width: 70px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      .separator {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0 5px;
+        margin-top: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .unit-label {
+        font-size: 14px;
+        margin-top: 8px;
+        display: block;
+        opacity: 0.9;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        .nms-countdown-title {
+          font-size: 22px;
+        }
+        
+        .nms-countdown-description {
+          font-size: 14px;
+        }
+        
+        .flip-card {
+          padding: 12px 16px;
+          font-size: 24px;
+          min-width: 55px;
+        }
+        
+        .separator {
+          font-size: 30px;
+          padding: 0 5px;
+        }
+        
+        .unit-label {
+          font-size: 12px;
+          margin-top: 6px;
+        }
+      }
+
+
+      @keyframes numberFlip {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(-10px) scale(1.1);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mega-menu {
+          width: 90vw;
+          padding: 20px;
+        }
+
+        .category-item {
+          width: 130px;
+        }
+
+        .category-img {
+          width: 90px;
+          height: 90px;
+        }
+        
+        .countdown-text {
+          margin-right: 10px;
+        }
+        
+        .nms-countdown-title {
+          font-size: var(--nms-text-heading-sm-mobile-size);
+        }
+        
+        .nms-countdown-description {
+          font-size: 11px;
+        }
+        
+        .flip-card {
+          padding: 6px 8px;
+          min-width: 50px;
+        }
+        
+        .flip-number {
+          font-size: 16px;
+        }
+        
+        .flip-label {
+          font-size: 7px;
+        }
+        
+        .separator {
+          font-size: 20px;
+        }
+        
+        .unit-label {
+          font-size: 9px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div class="flip-countdown-container">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-center g-3">
+            <!-- Text Section -->
+            <div class="col-auto">
+              <h2 class="nms-countdown-title mb-1">Deal Of The Week</h2>
+              <p class="nms-countdown-description mb-0">(Min. 50% OFF)</p>
+            </div>
+            
+            <!-- Countdown Section -->
+            <div class="col-auto">
+              <div class="d-flex align-items-center gap-2">
+                <div class="flip-unit">
+                  <div class="flip-card">
+                    <div class="flip-number" id="days">00</div>
+                    <div class="flip-label">Days</div>
+                  </div>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="flip-unit">
+                  <div class="flip-card">
+                    <div class="flip-number" id="hours">00</div>
+                    <div class="flip-label">Hours</div>
+                  </div>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="flip-unit">
+                  <div class="flip-card">
+                    <div class="flip-number" id="minutes">00</div>
+                    <div class="flip-label">Min</div>
+                  </div>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="flip-unit">
+                  <div class="flip-card">
+                    <div class="flip-number" id="seconds">00</div>
+                    <div class="flip-label">Sec</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #3b3b3b; padding: 10px 0">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <!-- Left -->
+          <div class="d-flex align-items-center gap-4">
+            <div
+              class="text-white d-flex align-items-center gap-2"
+              style="cursor: pointer"
+            >
+              <i class="bi bi-geo-alt-fill"></i> Nearby Stores
+            </div>
+
+            <!-- Advertise small effect -->
+            <div
+              class="text-white fw-semibold"
+              style="cursor: pointer; animation: blink 1.3s linear infinite"
+            >
+              Advertise
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="d-flex align-items-center gap-4">
+            <a href="#" class="text-white text-decoration-none">Track Order</a>
+            <a href="#" class="text-white text-decoration-none">About</a>
+            <a href="#" class="text-white text-decoration-none">Help</a>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar -->
+      <nav class="top-navbar py-2">
+        <div
+          class="container-fluid d-flex align-items-center justify-content-between"
+        >
+          <!-- Logo -->
+          <a href="#" class="d-flex align-items-center me-3">
+            <img
+              src="image/gujjuEClogo.png"
+              alt="Gujju Store"
+              style="height: 40px; width: auto; display: block"
+            />
+          </a>
+
+          <!-- Center Menu Items -->
+          <div
+            class="d-flex justify-content-center gap-3 flex-wrap flex-grow-1"
+          >
+            <div class="mega-dropdown-wrapper dropdown">
+              <div
+                class="nav-link-item"
+               
+                data-bs-auto-close="outside"
+              >
+                New
+              </div>
+
+              <div class="dropdown-menu mega-menu">
+                <div class="d-flex justify-content-center mb-4">
+                  <div class="tab-pills d-flex gap-0">
+                    <button
+                      class="btn active"
+                      onclick="switchTab('cat1', this)"
+                    >
+                      By Category
+                    </button>
+                    <button class="btn" onclick="switchTab('use1', this)">
+                      By Use
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-3 featured-sidebar pe-4">
+                    <div class="featured-label mb-3">Featured:</div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>New Launch Deals</span>
+                      <span>›</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>Gaming</span>
+                      <span>›</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>Official</span>
+                      <span>›</span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 ps-4">
+                    <div id="cat1Tab" class="tab-pane-custom">
+                      <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Sneakers" />
+                            <p class="product-title">Laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Slip Ons" />
+                            <p class="product-title">Mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Loafers" />
+                            <p class="product-title">laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Oxfords" />
+                            <p class="product-title">mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="use1Tab" class="tab-pane-custom d-none">
+                      <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Slip Ons" />
+                            <p class="product-title">Mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Loafers" />
+                            <p class="product-title">laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Oxfords" />
+                            <p class="product-title">mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mega-dropdown-wrapper dropdown">
+              <div
+                class="nav-link-item"
+                
+                data-bs-auto-close="outside"
+              >
+                Mobiles
+              </div>
+
+              <div class="dropdown-menu mega-menu">
+                <div class="d-flex justify-content-center mb-4">
+                  <div class="tab-pills d-flex gap-0">
+                    <button
+                      class="btn active"
+                      onclick="switchTab('cat1', this)"
+                    >
+                      By Category
+                    </button>
+                    <button class="btn" onclick="switchTab('use1', this)">
+                      By Use
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-3 featured-sidebar pe-4">
+                    <div class="featured-label mb-3">Featured:</div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>New Launch Deals</span>
+                      <span>›</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>Gaming</span>
+                      <span>›</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>Official</span>
+                      <span>›</span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 ps-4">
+                    <div id="cat1Tab" class="tab-pane-custom">
+                      <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Sneakers" />
+                            <p class="product-title">Laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Slip Ons" />
+                            <p class="product-title">Mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Loafers" />
+                            <p class="product-title">laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Oxfords" />
+                            <p class="product-title">mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="use1Tab" class="tab-pane-custom d-none">
+                      <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Slip Ons" />
+                            <p class="product-title">Mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Loafers" />
+                            <p class="product-title">laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Oxfords" />
+                            <p class="product-title">mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mega-dropdown-wrapper dropdown">
+              <div
+                class="nav-link-item"
+                
+                data-bs-auto-close="outside"
+              >
+                Laptops
+              </div>
+
+              <div class="dropdown-menu mega-menu">
+                <div class="d-flex justify-content-center mb-4">
+                  <div class="tab-pills d-flex gap-0">
+                    <button
+                      class="btn active"
+                      onclick="switchTab('cat1', this)"
+                    >
+                      By Category
+                    </button>
+                    <button class="btn" onclick="switchTab('use1', this)">
+                      By Use
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-3 featured-sidebar pe-4">
+                    <div class="featured-label mb-3">Featured:</div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>New Launch Deals</span>
+                      <span>›</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>Gaming</span>
+                      <span>›</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>Official</span>
+                      <span>›</span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 ps-4">
+                    <div id="cat1Tab" class="tab-pane-custom">
+                      <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Sneakers" />
+                            <p class="product-title">Laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Slip Ons" />
+                            <p class="product-title">Mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Loafers" />
+                            <p class="product-title">laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Oxfords" />
+                            <p class="product-title">mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="use1Tab" class="tab-pane-custom d-none">
+                      <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Slip Ons" />
+                            <p class="product-title">Mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Loafers" />
+                            <p class="product-title">laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Oxfords" />
+                            <p class="product-title">mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mega-dropdown-wrapper dropdown">
+              <div
+                class="nav-link-item"
+               
+                data-bs-auto-close="outside"
+              >
+                Offers
+              </div>
+
+              <div class="dropdown-menu mega-menu">
+                <div class="d-flex justify-content-center mb-4">
+                  <div class="tab-pills d-flex gap-0">
+                    <button
+                      class="btn active"
+                      onclick="switchTab('cat1', this)"
+                    >
+                      By Category
+                    </button>
+                    <button class="btn" onclick="switchTab('use1', this)">
+                      By Use
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-3 featured-sidebar pe-4">
+                    <div class="featured-label mb-3">Featured:</div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>New Launch Deals</span>
+                      <span>›</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>Gaming</span>
+                      <span>›</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center feature-link"
+                    >
+                      <span>Official</span>
+                      <span>›</span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 ps-4">
+                    <div id="cat1Tab" class="tab-pane-custom">
+                      <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Sneakers" />
+                            <p class="product-title">Laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Slip Ons" />
+                            <p class="product-title">Mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Loafers" />
+                            <p class="product-title">laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Oxfords" />
+                            <p class="product-title">mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="use1Tab" class="tab-pane-custom d-none">
+                      <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Slip Ons" />
+                            <p class="product-title">Mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/laptop.jpg" alt="Loafers" />
+                            <p class="product-title">laptops <span>›</span></p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="product-item">
+                            <img src="image/mobile.png" alt="Oxfords" />
+                            <p class="product-title">mobiles <span>›</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-section">
+            <!-- Search Bar with Icon as Link -->
+            <div class="search-container">
+              <input
+                type="text"
+                placeholder="Search products..."
+                aria-label="Search"
+              />
+              <a href="/search"><i class="bi bi-search"></i></a>
+            </div>
+
+            <!-- Account/Login -->
+            <a href="/account" class="account-cart">
+              <i class="bi bi-person fs-5"></i> Account
+            </a>
+
+            <!-- Cart -->
+            <a href="/cart" class="account-cart position-relative">
+              <i class="bi bi-cart fs-5"></i> Cart
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >
+                3
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Slider Section -->
+      <div class="container-fluid py-4 bg-white">
+        <div class="slider-container position-relative">
+          <button
+            class="slider-btn prev d-flex align-items-center justify-content-center"
+            id="prevBtn"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15 6l-1.4-1.4L7 12l6.6 7.4L15 18l-5-6z" />
+            </svg>
+          </button>
+
+          <div class="slider-track px-5" id="sliderTrack">
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="New Launches" />
+                <div class="category-name">New</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/mobile.png" alt="Limited Stock" />
+                <div class="category-name">Limited</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="Begin Walk" />
+                <div class="category-name">Begin</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="Men" />
+                <div class="category-name">Laptop</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/mobile.png" alt="Women" />
+                <div class="category-name">Mobile</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="Begin Walk" />
+                <div class="category-name">Begin</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="Men" />
+                <div class="category-name">Laptop</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/mobile.png" alt="Women" />
+                <div class="category-name">Mobile</div>
+              </div>
+            </div>
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="Begin Walk" />
+                <div class="category-name">Begin</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="Men" />
+                <div class="category-name">Laptop</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/mobile.png" alt="Women" />
+                <div class="category-name">Mobile</div>
+              </div>
+            </div>
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="Begin Walk" />
+                <div class="category-name">Begin</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/laptop.jpg" alt="Men" />
+                <div class="category-name">Laptop</div>
+              </div>
+            </div>
+
+            <div class="category-item">
+              <div class="category-img">
+                <img src="image/mobile.png" alt="Women" />
+                <div class="category-name">Mobile</div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="slider-btn next d-flex align-items-center justify-content-center"
+            id="nextBtn"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 6l1.4-1.4L17 12l-6.6 7.4L9 18l5-6z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script>
+        // Tab Switching Function
+        function switchTab(tabName, btn, event) {
+          if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          
+          const parentMenu = btn.closest(".mega-menu");
+
+          parentMenu.querySelectorAll(".tab-pane-custom").forEach((pane) => {
+            pane.classList.add("d-none");
+          });
+
+          parentMenu.querySelectorAll(".tab-pills .btn").forEach((button) => {
+            button.classList.remove("active");
+          });
+
+          parentMenu.querySelector(`#${tabName}Tab`).classList.remove("d-none");
+          btn.classList.add("active");
+        }
+
+        // Slider Functionality
+        const track = document.getElementById("sliderTrack");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const scrollAmount = 450;
+
+        function updateButtons() {
+          const maxScroll = track.scrollWidth - track.clientWidth;
+          prevBtn.classList.toggle("disabled", track.scrollLeft <= 0);
+          nextBtn.classList.toggle(
+            "disabled",
+            track.scrollLeft >= maxScroll - 1
+          );
+        }
+
+        nextBtn.onclick = () => {
+          track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+          setTimeout(updateButtons, 400);
+        };
+
+        prevBtn.onclick = () => {
+          track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+          setTimeout(updateButtons, 400);
+        };
+
+        track.addEventListener("scroll", updateButtons);
+        updateButtons();
+      </script>
+      <script>
+        function startFlipTimer() {
+          // Set countdown to 7 days from now for demo
+          const endTime = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+          
+          function update() {
+            const now = new Date().getTime();
+            const distance = endTime - now;
+
+            if (distance <= 0) {
+              // Timer expired
+              document.getElementById("days").innerText = "00";
+              document.getElementById("hours").innerText = "00";
+              document.getElementById("minutes").innerText = "00";
+              document.getElementById("seconds").innerText = "00";
+              return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            flipUpdate("days", days);
+            flipUpdate("hours", hours);
+            flipUpdate("minutes", minutes);
+            flipUpdate("seconds", seconds);
+          }
+
+          function flipUpdate(id, newVal) {
+            const el = document.getElementById(id);
+            const formatted = String(newVal).padStart(2, "0");
+
+            if (formatted !== el.innerText) {
+              // Add flip animation to number only
+              el.classList.add("flip");
+              
+              // Update value immediately with animation
+              el.innerText = formatted;
+              
+              // Remove flip class after animation
+              setTimeout(() => {
+                el.classList.remove("flip");
+              }, 400);
+            }
+          }
+
+          // Initialize immediately
+          update();
+          
+          // Update every second
+          setInterval(update, 1000);
+        }
+
+        // Start countdown when page loads
+        document.addEventListener('DOMContentLoaded', startFlipTimer);
+      </script>
+      <script>
+  const dropdowns = document.querySelectorAll(".mega-dropdown-wrapper");
+  let pinnedDropdown = null;
+
+  dropdowns.forEach((dropdown) => {
+    const trigger = dropdown.querySelector(".nav-link-item");
+    const menu = dropdown.querySelector(".mega-menu");
+
+    /* ---------- HOVER OPEN / CLOSE ---------- */
+    dropdown.addEventListener("mouseenter", () => {
+      if (window.innerWidth <= 768) return;
+      if (pinnedDropdown && pinnedDropdown !== dropdown) return;
+      openDropdown(dropdown);
+    });
+
+    dropdown.addEventListener("mouseleave", () => {
+      if (window.innerWidth <= 768) return;
+      if (pinnedDropdown === dropdown) return;
+      closeDropdown(dropdown);
+    });
+
+    /* ---------- CLICK TO PIN ---------- */
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      if (pinnedDropdown === dropdown) {
+        closeDropdown(dropdown);
+        pinnedDropdown = null;
+      } else {
+        closeAll();
+        openDropdown(dropdown);
+        pinnedDropdown = dropdown;
+      }
+    });
+  });
+
+  /* ---------- OUTSIDE CLICK CLOSE ---------- */
+  dropdowns.forEach((dropdown) => {
+    dropdown.querySelector(".mega-menu").addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!Array.from(dropdowns).some(dropdown => dropdown.contains(e.target))) {
+      closeAll();
+      pinnedDropdown = null;
+    }
+  });
+
+  function openDropdown(dropdown) {
+    dropdown.querySelector(".nav-link-item").classList.add("active");
+    dropdown.querySelector(".mega-menu").classList.add("show");
+  }
+
+  function closeDropdown(dropdown) {
+    dropdown.querySelector(".nav-link-item").classList.remove("active");
+    dropdown.querySelector(".mega-menu").classList.remove("show");
+  }
+
+  function closeAll() {
+    dropdowns.forEach((d) => closeDropdown(d));
+  }
+</script>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,465 @@
+<section>
+  <footer>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <style>
+      .nms-footer {
+        background: #0B1F1E;
+        color: #ffffff;
+        padding-top: 60px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .nms-footer-container {
+        max-width: 1400px;
+        margin: auto;
+        padding: 0 20px;
+      }
+
+      .marquee-wrapper {
+        width: 100%;
+        overflow: hidden;
+        border-top: 1px solid #355e58;
+        border-bottom: 1px solid #355e58;
+        background: #0B1F1E;
+        padding: 14px 0;
+        position: relative;
+      }
+
+      .marquee-content {
+        display: flex;
+        gap: 80px;
+        align-items: center;
+        white-space: nowrap;
+        animation: marqueeAnim 18s linear infinite;
+      }
+
+      .marquee-content span {
+        font-size: 26px;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      @keyframes marqueeAnim {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .nms-footer-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #213532;
+      }
+
+      .nms-footer-left {
+        flex: 1 1 60%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .nms-footer-right {
+        flex: 1 1 35%;
+      }
+
+      .nms-footer-block__title {
+        margin-bottom: 14px;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 600;
+        position: relative;
+      }
+
+      .nms-footer-block__title-line {
+        display: block;
+        width: 35px;
+        height: 3px;
+        background: #3fa17a;
+        margin-top: 6px;
+      }
+
+      .nms-footer-nav__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nms-footer-nav__item {
+        margin-bottom: 8px;
+      }
+
+      .nms-footer-nav__link {
+        color: #d7d7d7;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.2s;
+      }
+
+      .nms-footer-nav__link:hover {
+        color: #4fbf9e;
+        padding-left: 4px;
+      }
+
+      .nms-newsletter {
+        background: #102724;
+        border-radius: 8px;
+        padding: 25px;
+      }
+
+      .nms-newsletter__heading {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .nms-newsletter__description {
+        color: #d9d9d9;
+        font-size: 14px;
+        margin: 8px 0 14px;
+      }
+
+      .Form__Input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        margin-bottom: 10px;
+      }
+
+      .nms-button {
+        background: #3fa17a;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 6px;
+        border: none;
+      }
+
+      .nms-button:hover {
+        background: #52c295;
+      }
+
+      .nms-footer-middle {
+        padding: 45px 0;
+        border-bottom: 1px solid #1a302d;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .nms-footer-social {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        padding: 0;
+      }
+
+      .nms-social-link {
+        color: #d4d4d4;
+        font-size: 18px;
+        transition: 0.2s;
+      }
+
+      .nms-social-link:hover {
+        color: #4fbf9e;
+      }
+
+      .nms-footer-bottom {
+        padding: 22px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        color: #d7d7d7;
+        font-size: 14px;
+      }
+
+      .nms-payment-wrapper {
+        padding: 40px 0 20px;
+        border-bottom: 1px solid #1a302d;
+      }
+
+      .nms-payment-title {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 14px;
+      }
+
+      .nms-payment-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .nms-payment-icons img {
+        height: 32px;
+        filter: brightness(0) invert(1);
+        opacity: 0.8;
+        transition: 0.2s;
+      }
+
+      .nms-payment-icons img:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 992px) {
+        .nms-footer-left {
+          flex: 1 1 100%;
+        }
+        .nms-footer-right {
+          flex: 1 1 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .marquee-content span {
+          font-size: 18px;
+        }
+      }
+    </style>
+
+    <div class="marquee-wrapper">
+      <div class="marquee-content">
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+        <span>DESIGNED FOR YOU & PLANET</span>
+      </div>
+    </div>
+
+    <div class="nms-footer" style="background: #0b1f1e">
+      <div class="nms-footer-container">
+        <div class="nms-footer-top">
+          <div class="nms-footer-left">
+            <div class="nms-footer-nav nms-footer-nav--half">
+              <p class="nms-footer-block__title nms-text-title-md">
+                <span>Shop By Category</span>
+                <span class="nms-footer-block__title-line"></span>
+              </p>
+              <ul class="nms-footer-nav__list" role="list">
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/sneakers-collection" class="nms-footer-nav__link nms-text-label-md">Laptops</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/slip-ons-collection" class="nms-footer-nav__link nms-text-label-md">Mobiles</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/loafers-collection" class="nms-footer-nav__link nms-text-label-md">Laptops</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/oxfords-collection" class="nms-footer-nav__link nms-text-label-md">Mobiles</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nms-footer-nav nms-footer-nav--half">
+              <p class="nms-footer-block__title nms-text-title-md">
+                <span>Shop By Use</span>
+                <span class="nms-footer-block__title-line"></span>
+              </p>
+              <ul class="nms-footer-nav__list" role="list">
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/sneakers-collection" class="nms-footer-nav__link nms-text-label-md">Laptops</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/slip-ons-collection" class="nms-footer-nav__link nms-text-label-md">Mobiles</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/loafers-collection" class="nms-footer-nav__link nms-text-label-md">Laptops</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/oxfords-collection" class="nms-footer-nav__link nms-text-label-md">Mobiles</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nms-footer-nav nms-footer-nav--half">
+              <p class="nms-footer-block__title nms-text-title-md">
+                <span>Categories</span>
+                <span class="nms-footer-block__title-line"></span>
+              </p>
+              <ul class="nms-footer-nav__list" role="list">
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/sneakers-collection" class="nms-footer-nav__link nms-text-label-md">Electronics</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/slip-ons-collection" class="nms-footer-nav__link nms-text-label-md">Accessories</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nms-footer-nav nms-footer-nav--half">
+              <p class="nms-footer-block__title nms-text-title-md">
+                <span>Quick Links</span>
+                <span class="nms-footer-block__title-line"></span>
+              </p>
+              <ul class="nms-footer-nav__list" role="list">
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/sneakers-collection" class="nms-footer-nav__link nms-text-label-md">New Arrivals</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/slip-ons-collection" class="nms-footer-nav__link nms-text-label-md">Best Sellers</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nms-footer-right">
+            <div class="nms-newsletter" role="group">
+              <div class="nms-newsletter__icon" aria-hidden="true">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.5 18.5C9.5 19.2956 9.81607 20.0587 10.3787 20.6213C10.9413 21.1839 11.7044 21.5 12.5 21.5C13.2956 21.5 14.0587 21.1839 14.6213 20.6213C15.1839 20.0587 15.5 19.2956 15.5 18.5" stroke="#468A44" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M5.74939 10.25C5.74939 8.45979 6.46055 6.7429 7.72642 5.47703C8.99229 4.21116 10.7092 3.5 12.4994 3.5C14.2896 3.5 16.0065 4.21116 17.2724 5.47703C18.5382 6.7429 19.2494 8.45979 19.2494 10.25C19.2494 13.6081 20.0275 16.3063 20.6463 17.375C20.712 17.4888 20.7466 17.6179 20.7468 17.7493C20.7469 17.8808 20.7124 18.0099 20.6469 18.1239C20.5814 18.2378 20.4871 18.3325 20.3735 18.3985C20.2598 18.4645 20.1308 18.4995 19.9994 18.5H4.99939C4.86813 18.4992 4.73936 18.464 4.62598 18.3978C4.51259 18.3317 4.41855 18.2369 4.35326 18.1231C4.28797 18.0092 4.25371 17.8801 4.25391 17.7489C4.25411 17.6176 4.28876 17.4887 4.35439 17.375C4.97221 16.3063 5.74939 13.6072 5.74939 10.25Z" stroke="#468A44" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+
+              <div class="nms-newsletter__content">
+                <p class="nms-newsletter__heading nms-text-display-sm">
+                  Let's walk greener paths Together!
+                </p>
+                <p class="nms-newsletter__description nms-text-body-md">
+                  Discover comfort that cares — for you and the earth.
+                </p>
+                <form method="post" action="/contact#footer-newsletter" id="footer-newsletter" accept-charset="UTF-8" class="Footer__Newsletter Form" data-persist-bound="true">
+                  <input type="hidden" name="form_type" value="customer" />
+                  <input type="hidden" name="utf8" value="✓" />
+                  <input type="hidden" name="contact[tags]" value="newsletter" />
+                  <input type="email" name="contact[email]" class="Form__Input" aria-label="Enter your email address" placeholder="Enter your email address" required="" />
+                  <button type="submit" class="Form__Submit Button Button--secondary aish37 mob_animation nms-button">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="nms-payment-wrapper">
+              <p class="nms-payment-title">We Accept</p>
+              <div class="nms-payment-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/RuPay_Logo.png" alt="RuPay">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nms-footer-middle">
+          <div class="nms-footer-left">
+            <div class="nms-footer-nav">
+              <p class="nms-footer-block__title nms-text-title-md">
+                <span>Offers</span>
+                <span class="nms-footer-block__title-line"></span>
+              </p>
+              <ul class="nms-footer-nav__list" role="list">
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/all-products" class="nms-footer-nav__link nms-text-label-md">Anniversary Sale</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/pages/student-discount" class="nms-footer-nav__link nms-text-label-md">Student Discount</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/collections/limited-stock" class="nms-footer-nav__link nms-text-label-md">Limited Stock</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nms-footer-nav">
+              <p class="nms-footer-block__title nms-text-title-md">
+                <span>Help & Support</span>
+                <span class="nms-footer-block__title-line"></span>
+              </p>
+              <ul class="nms-footer-nav__list" role="list">
+                <li class="nms-footer-nav__item">
+                  <a href="/pages/contact-us-neemans" class="nms-footer-nav__link nms-text-label-md">Contact Us</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/pages/neemans-order-tracker" class="nms-footer-nav__link nms-text-label-md">Track Order</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/pages/return-policy" class="nms-footer-nav__link nms-text-label-md">Return & Exchange</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/pages/faq" class="nms-footer-nav__link nms-text-label-md">FAQ</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nms-footer-nav">
+              <p class="nms-footer-block__title nms-text-title-md">
+                <span>About Us</span>
+                <span class="nms-footer-block__title-line"></span>
+              </p>
+              <ul class="nms-footer-nav__list" role="list">
+                <li class="nms-footer-nav__item">
+                  <a href="/pages/brand-impact" class="nms-footer-nav__link nms-text-label-md">Brand Impact</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/pages/storelocator" class="nms-footer-nav__link nms-text-label-md">Near By Store</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/pages/reviews" class="nms-footer-nav__link nms-text-label-md">Store Reviews</a>
+                </li>
+                <li class="nms-footer-nav__item">
+                  <a href="/blogs/articles" class="nms-footer-nav__link nms-text-label-md">Blogs</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="nms-footer-right"></div>
+        </div>
+
+        <div class="nms-footer-bottom">
+          <div class="nms-footer-bottom-left">
+            <p class="nms-footer-bottom-text nms-text-body-sm">
+              © 2024 GujjuEC's | All Rights Reserved
+            </p>
+          </div>
+          <div class="nms-footer-bottom-right">
+            <ul class="nms-footer-social" role="list">
+              <li>
+                <a href="#" class="nms-social-link">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nms-social-link">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nms-social-link">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nms-social-link">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </footer>
+</section>

@@ -1,311 +1,33 @@
-<!-- dropdown starts from here... -->
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced Dropdown</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8">
+  <title>My Website</title>
+</head>
+<body>
 
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
-      }
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
 
-      .mega-dropdown .dropdown-menu {
-        width: 50vw;
-        left: 50% !important;
-        right: auto !important;
-        transform: translateX(-50%) !important;
-        border: none;
-        border-radius: 20px;
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
-        padding: 30px;
-      }
+  <!-- HERO -->
+  <div id="hero"></div>
 
-      .mega-dropdown {
-        position: static !important;
-      }
+  <!-- FOOTER -->
+  <div id="footer"></div>
 
-      .tab-toggle {
-        background: #f5f5f5;
-        border-radius: 50px;
-        padding: 4px;
-        width: fit-content;
-      }
-
-      .tab-toggle .btn {
-        border: none;
-        background: transparent;
-        padding: 10px 28px;
-        border-radius: 50px;
-        font-weight: 500;
-        font-size: 14px;
-        color: #666;
-        transition: all 0.3s;
-      }
-
-      .tab-toggle .btn.active {
-        background: #1a1a1a;
-        color: white;
-      }
-
-      .featured-section {
-        border-right: 1px solid #e5e5e5;
-      }
-
-      .featured-label {
-        font-size: 11px;
-        font-weight: 600;
-        color: #999;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .feature-item {
-        padding: 12px 0;
-        font-size: 15px;
-        color: #1a1a1a;
-        cursor: pointer;
-        transition: all 0.2s;
-      }
-
-      .feature-item:hover {
-        color: #666;
-        padding-left: 5px;
-      }
-
-      .product-card {
-        background: white;
-        border-radius: 12px;
-        padding: 20px;
-        cursor: pointer;
-        transition: all 0.3s;
-        text-align: center;
-        height: 100%;
-      }
-
-      .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .product-card img {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 12px;
-      }
-
-      .product-card-title {
-        font-size: 15px;
-        font-weight: 600;
-        color: #1a1a1a;
-        margin: 0;
-      }
-    </style>
-  </head>
-
-  <body class="p-5">
-    <div class="d-flex justify-content-center">
-      <div class="dropdown mega-dropdown">
-        <button
-          class="btn btn-warning px-4 py-2 dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-bs-toggle="dropdown"
-          data-bs-auto-close="outside"
-          aria-expanded="false"
-        >
-          Shop Menu
-        </button>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <!-- Tab Toggle (Centered) -->
-          <div class="d-flex justify-content-center mb-4">
-            <div class="tab-toggle d-flex gap-0">
-              <button class="btn active" onclick="switchTab('cat', this)">
-                By Category
-              </button>
-              <button class="btn" onclick="switchTab('use', this)">
-                By Use
-              </button>
-            </div>
-          </div>
-
-          <div class="row">
-            <!-- Left Sidebar (Featured) -->
-            <div class="col-md-3 featured-section pe-4">
-              <div class="featured-label mb-3">Featured:</div>
-              <div
-                class="d-flex justify-content-between align-items-center feature-item"
-              >
-                <span>New Launch Deals</span>
-                <span>›</span>
-              </div>
-              <div
-                class="d-flex justify-content-between align-items-center feature-item"
-              >
-                <span>The Urban Collection</span>
-                <span>›</span>
-              </div>
-              <div
-                class="d-flex justify-content-between align-items-center feature-item"
-              >
-                <span>The Cushers Collection</span>
-                <span>›</span>
-              </div>
-            </div>
-
-            <!-- Right Content (Product Grid) -->
-            <div class="col-md-9 ps-4">
-              <!-- By Category Tab -->
-              <div id="catTab" class="tab-content-pane">
-                <div class="row g-3 mb-3">
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Sneakers_women.webp" alt="Sneakers" />
-                      <p class="product-card-title">Sneakers <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Sneakers_women.webp" alt="Slip Ons" />
-                      <p class="product-card-title">Slip Ons <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Sneakers_women.webp" alt="Loafers" />
-                      <p class="product-card-title">Loafers <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Sneakers_women.webp" alt="Oxfords" />
-                      <p class="product-card-title">Oxfords <span>›</span></p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-3">
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Sneakers_women.webp" alt="Slides" />
-                      <p class="product-card-title">Slides <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Sneakers_women.webp" alt="Clogs" />
-                      <p class="product-card-title">Clogs <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Sneakers_women.webp" alt="Flip-Flops" />
-                      <p class="product-card-title">
-                        Flip-Flops <span>›</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Sneakers_women.webp" alt="Flats" />
-                      <p class="product-card-title">Flats <span>›</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- By Use Tab -->
-              <div id="useTab" class="tab-content-pane d-none">
-                <div class="row g-3 mb-3">
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Chunky_Women.webp" alt="Daily Wear" />
-                      <p class="product-card-title">
-                        Daily Wear <span>›</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Chunky_Women.webp" alt="Office Use" />
-                      <p class="product-card-title">
-                        Office Use <span>›</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Chunky_Women.webp" alt="Running" />
-                      <p class="product-card-title">Running <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Chunky_Women.webp" alt="Travel" />
-                      <p class="product-card-title">Travel <span>›</span></p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row g-3">
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Chunky_Women.webp" alt="Gym" />
-                      <p class="product-card-title">Gym <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Chunky_Women.webp" alt="Casual" />
-                      <p class="product-card-title">Casual <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Chunky_Women.webp" alt="Formal" />
-                      <p class="product-card-title">Formal <span>›</span></p>
-                    </div>
-                  </div>
-                  <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                      <img src="/images/Chunky_Women.webp" alt="All Products" />
-                      <p class="product-card-title">All <span>›</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-      function switchTab(tabName, btn) {
-        // Hide all tab content
-        document.querySelectorAll(".tab-content-pane").forEach((pane) => {
-          pane.classList.add("d-none");
+  <script>
+    function loadComponent(id, file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById(id).innerHTML = data;
         });
+    }
 
-        // Remove active class from all buttons
-        document.querySelectorAll(".tab-toggle .btn").forEach((button) => {
-          button.classList.remove("active");
-        });
+    loadComponent("navbar", "navbar.html");
+    loadComponent("hero", "hero.html");
+    loadComponent("footer", "footer.html");
+  </script>
 
-        // Show selected tab and activate button
-        document.getElementById(tabName + "Tab").classList.remove("d-none");
-        btn.classList.add("active");
-      }
-    </script>
-  </body>
+</body>
 </html>

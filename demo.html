@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hero Section</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -23,23 +22,23 @@
       background: #fff;
     }
     a { text-decoration: none; color: inherit; }
-    .container-hero-max-hero { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+    .container-max { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
 
     /* ===== ROOT VARIABLES ===== */
     :root {
-      --bg-a-hero: #0f0f0f;
-      --bg-b-hero: #1a1a1a;
-      --accent-hero: #ff7f00;
-      --white-hero: #ffffff;
+      --bg-a: #0f0f0f;
+      --bg-b: #1a1a1a;
+      --accent: #ff7f00;
+      --white: #ffffff;
     }
 
     /* ===== NAVBAR STYLES ===== */
-    .top-navbar-hero {
+    .top-navbar {
       background: #f8f9fa;
       border-bottom: 1px solid #e5e5e5;
     }
 
-    .nav-link-item-hero {
+    .nav-link-item {
       padding: 12px 16px;
       color: #333;
       font-size: 14px;
@@ -50,24 +49,24 @@
       position: relative;
     }
 
-    .nav-link-item-hero:hover {
+    .nav-link-item:hover {
       background: linear-gradient(90deg, rgba(255, 127, 0, 0.1), rgba(255, 127, 0, 0.05));
       color: #ff7f00;
     }
 
-    .navbar-section-hero {
+    .navbar-section {
       display: flex;
       align-items: center;
       gap: 15px;
       padding: 10px 0;
     }
 
-    .search-container-hero {
+    .search-container {
       position: relative;
       width: 200px;
     }
 
-    .search-container-hero input {
+    .search-container input {
       width: 100%;
       height: 38px;
       border-radius: 50px;
@@ -77,7 +76,7 @@
       transition: all 0.3s ease;
     }
 
-    .search-container-hero a {
+    .search-container a {
       position: absolute;
       right: 5px;
       top: 50%;
@@ -93,7 +92,7 @@
       text-decoration: none;
     }
 
-    .account-cart-hero {
+    .account-cart {
       display: flex;
       align-items: center;
       gap: 5px;
@@ -102,12 +101,12 @@
       font-weight: 500;
     }
 
-    .account-cart-hero:hover {
+    .account-cart:hover {
       color: #fd6d0d;
     }
 
     /* ===== COUNTDOWN STYLES ===== */
-    .flip-countdown-container-hero {
+    .flip-countdown-container {
       background: linear-gradient(135deg, #d54a0c 0%, #ff5722 100%);
       color: white;
       padding: 20px 0;
@@ -117,26 +116,26 @@
       text-align: center;
     }
 
-    .nms-countdown-title-hero {
+    .nms-countdown-title {
       font-size: 28px;
       font-weight: 700;
       margin: 0 0 5px 0;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    .nms-countdown-description-hero {
+    .nms-countdown-description {
       font-size: 16px;
       margin: 0 0 20px 0;
       opacity: 0.9;
       font-weight: 500;
     }
 
-    .flip-unit-hero {
+    .flip-unit {
       text-align: center;
       margin: 0 5px;
     }
 
-    .flip-card-hero {
+    .flip-card {
       background: rgba(255, 255, 255, 0.2);
       color: white;
       padding: 15px 20px;
@@ -149,13 +148,13 @@
       backdrop-filter: blur(10px);
     }
 
-    .flip-number-hero {
+    .flip-number {
       font-size: 32px;
       font-weight: bold;
       line-height: 1;
     }
 
-    .flip-label-hero {
+    .flip-label {
       font-size: 8px;
       font-weight: 600;
       text-transform: uppercase;
@@ -163,7 +162,7 @@
       margin-top: 2px;
     }
 
-    .separator-hero {
+    .separator {
       font-size: 20px;
       font-weight: bold;
       padding: 0 5px;
@@ -172,29 +171,29 @@
     }
 
     /* ===== SLIDER STYLES ===== */
-    .slider-container-hero-nav {
+    .slider-container-nav {
       position: relative;
       width: 100%;
       overflow: hidden;
       height: 70vh;
-      margin-top: 0;
+      margin-top: -40px;
     }
 
-    .slides-hero {
+    .slides {
       display: flex;
       width: 100%;
       height: 100%;
       transition: transform 1s ease-in-out;
     }
 
-    .slide-hero {
+    .slide {
       min-width: 100%;
       height: 100%;
       position: relative;
       overflow: hidden;
     }
 
-    .slide-hero img {
+    .slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -202,7 +201,7 @@
       transition: transform 2s ease;
     }
 
-    .slide-hero.active img {
+    .slide.active img {
       transform: scale(1);
     }
 
@@ -219,16 +218,16 @@
       cursor: pointer;
     }
 
-    .arrow-left-hero { left: 20px; }
-    .arrow-right-hero { right: 20px; }
+    .arrow-left { left: 20px; }
+    .arrow-right { right: 20px; }
 
     /* ===== HERO SECTION ===== */
-    .hero-main {
+    .hero {
       background: linear-gradient(90deg, #fafafa, #fff);
       padding: 36px 16px;
     }
 
-    .hero-inner-nav {
+    .hero-inner {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
@@ -237,23 +236,23 @@
       flex-wrap: wrap;
     }
 
-    .hero-left-hero {
+    .hero-left {
       flex: 1;
       min-width: 260px;
     }
 
-    .hero-left-hero h1 {
+    .hero-left h1 {
       font-size: 28px;
       margin-bottom: 12px;
     }
 
-    .hero-left-hero p {
+    .hero-left p {
       font-size: 16px;
       color: #555;
       margin-bottom: 12px;
     }
 
-    .cta-hero {
+    .cta {
       display: inline-block;
       padding: 12px 18px;
       background: #ff7f00;
@@ -262,30 +261,30 @@
       margin-top: 12px;
     }
 
-    .hero-right-hero {
+    .hero-right {
       flex: 1;
       min-width: 260px;
     }
 
-    .hero-right-hero img {
+    .hero-right img {
       width: 100%;
       border-radius: 10px;
     }
 
     /* ===== EXCLUSIVE EDITIONS ===== */
-    .exclusive-section-hero {
+    .exclusive-section {
       padding: 40px 0;
       text-align: center;
       font-family: 'Segoe UI', sans-serif;
     }
 
-    .exclusive-title-hero-hero {
+    .exclusive-title {
       font-size: 50px;
       font-weight: 600;
       margin-bottom: 25px;
     }
 
-    .edition-card-hero {
+    .edition-card {
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 18px rgba(0,0,0,0.08);
@@ -293,30 +292,30 @@
       transition: none !important;
     }
 
-    .edition-card-hero:hover {
+    .edition-card:hover {
       transform: none !important;
     }
 
-    .edition-img-hero {
+    .edition-img {
       width: 100%;
       height: 370px;
       object-fit: cover;
     }
 
-    .edition-body-hero {
+    .edition-body {
       padding: 18px 15px;
       background: white;
       text-align: center;
     }
 
-    .edition-title-hero {
+    .edition-title {
       font-weight: 700;
       font-size: 18px;
       text-transform: uppercase;
       margin-bottom: 15px;
     }
 
-    .btn-view-hero {
+    .btn-view {
       border-radius: 30px;
       font-weight: 600;
       padding: 8px 20px;
@@ -325,29 +324,29 @@
       transition: all .3s;
     }
 
-    .btn-view-hero:hover {
+    .btn-view:hover {
       background: #f6f6f6;
     }
 
-    .view-all-btn-hero {
+    .view-all-btn {
       margin-top: 20px;
     }
 
     /* ===== BANNER SECTION ===== */
-    .banner-hero-section {
+    .banner-section {
       position: relative;
       width: 100%;
       height: 380px;
       border-radius: 12px;
       overflow: hidden;
       background: linear-gradient(90deg, #1A1A1A, #b6b8b4);
-      color: var(--white-hero);
+      color: var(--white);
       display: flex;
       align-items: center;
       padding: 36px 48px;
     }
 
-    .side-text-hero {
+    .side-text {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -362,10 +361,10 @@
       letter-spacing: 1px;
     }
 
-    .side-left-hero { left: 12px; }
-    .side-right-hero { right: 8px; }
+    .side-left { left: 12px; }
+    .side-right { right: 8px; }
 
-    .hero-text-banner { z-index: 2; max-width: 56%; }
+    .hero-text { z-index: 2; max-width: 56%; }
 
     .banner-title-big {
       font-size: 42px;
@@ -397,9 +396,9 @@
       animation-delay: 0.6s;
     }
 
-    .cta-hero-btn {
+    .cta-btn {
       display: inline-block;
-      background: var(--white-hero);
+      background: var(--white);
       color: #111;
       border: none;
       font-weight: 800;
@@ -414,12 +413,12 @@
       transition: transform .18s ease, box-shadow .18s ease;
     }
 
-    .cta-hero-btn:hover {
+    .cta-btn:hover {
       transform: scale(1.06);
       box-shadow: 0 10px 26px rgba(0,0,0,0.45);
     }
 
-    .product-img-hero {
+    .product-img {
       position: absolute;
       right: 84px;
       bottom: 34px;
@@ -452,13 +451,13 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .banner-hero-section {
+      .banner-section {
         padding: 28px 20px;
         height: auto;
         flex-direction: column;
         align-items: flex-start;
       }
-      .hero-text-banner { max-width: 100%; }
+      .hero-text { max-width: 100%; }
       .banner-title-big { font-size: 30px; }
       .banner-title-small { font-size: 18px; }
       .product-img {
@@ -467,25 +466,25 @@
         height: 180px;
         margin-top: 18px;
       }
-      .side-text-hero { display: none; }
+      .side-text { display: none; }
     }
 
     @media (max-width: 768px) {
-      .nms-countdown-title-hero { font-size: 22px; }
-      .nms-countdown-description-hero { font-size: 14px; }
-      .-hero {
+      .nms-countdown-title { font-size: 22px; }
+      .nms-countdown-description { font-size: 14px; }
+      .flip-card {
         padding: 12px 16px;
         font-size: 24px;
         min-width: 55px;
       }
-      .separator-hero {
+      .separator {
         font-size: 30px;
         padding: 0 5px;
       }
     }
 
     @media (max-width: 480px) {
-      .banner-hero-section { padding: 20px 14px; }
+      .banner-section { padding: 20px 14px; }
       .banner-title-big { font-size: 24px; }
       .banner-title-small { font-size: 16px; }
     }
@@ -496,106 +495,106 @@
   
   
   <div id="navbar"></div>
-  <!-- SLIDER container-hero -->
-  <div class="slider-container-hero-nav">
-    <button class="arrow-btn-nav arrow-left-hero" onclick="prevSlide()">❮</button>
-    <button class="arrow-btn-nav arrow-right-hero" onclick="nextSlide()">❯</button>
-    <div class="slides-hero" id="slides">
-      <div class="slide-hero active">
+  <!-- SLIDER CONTAINER -->
+  <div class="slider-container-nav">
+    <button class="arrow-btn-nav arrow-left" onclick="prevSlide()">❮</button>
+    <button class="arrow-btn-nav arrow-right" onclick="nextSlide()">❯</button>
+    <div class="slides" id="slides">
+      <div class="slide active">
         <img src="/image/banner3.png" />
       </div>
-      <div class="slide-hero">
+      <div class="slide">
         <img src="/image/banner1.png" />
       </div>
-      <div class="slide-hero">
+      <div class="slide">
         <img src="/image/banner2.png" />
       </div>
-      <div class="slide-hero">
+      <div class="slide">
         <img src="/image/banner3.png" />
       </div>
     </div>
   </div>
 
   <!-- HERO SECTION -->
-  <section class="hero-main">
-    <div class="hero-inner-nav container-hero-max-hero">
-      <div class="hero-left-hero">
+  <section class="hero">
+    <div class="hero-inner container-max">
+      <div class="hero-left">
         <h1>Buy Electronics &amp; Accessories</h1>
         <p>Made in India • Sustainable materials • Free shipping over 999</p>
-        <a class="cta-hero" href="#">Shop Now</a>
+        <a class="cta" href="#">Shop Now</a>
       </div>
-      <div class="hero-right-hero">
+      <div class="hero-right">
         <img src="/image/banner2.png" alt="Banner" style="width:100%;border-radius:10px" onerror="this.onerror=null;this.src='https://via.placeholder.com/600x350?text=Banner'">
       </div>
     </div>
   </section>
 
   <!-- EXCLUSIVE EDITIONS -->
-  <section class="exclusive-section-hero">
-    <h2 class="exclusive-title-hero-hero">Our Exclusive Editions</h2>
-    <div class="container-hero-hero">
+  <section class="exclusive-section">
+    <h2 class="exclusive-title">Our Exclusive Editions</h2>
+    <div class="container">
       <div class="row g-4 justify-content-center">
         <div class="col-md-3 col-sm-6">
-          <div class="edition-card-hero">
-            <img src="/image/mobile.png" class="edition-img-hero" alt="">
-            <div class="edition-body-hero">
-              <p class="edition-title-hero">THE RELIVE KNIT RENEW COLLECTION</p>
-              <button class="btn btn-view-hero">View Products →</button>
+          <div class="edition-card">
+            <img src="/image/mobile.png" class="edition-img" alt="">
+            <div class="edition-body">
+              <p class="edition-title">THE RELIVE KNIT RENEW COLLECTION</p>
+              <button class="btn btn-view">View Products →</button>
             </div>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
-          <div class="edition-card-hero">
-            <img src="/image/mobile.png" class="edition-img-hero" alt="">
-            <div class="edition-body-hero">
-              <p class="edition-title-hero">THE BEGIN COLLECTION</p>
-              <button class="btn btn-view-hero">View Products →</button>
+          <div class="edition-card">
+            <img src="/image/mobile.png" class="edition-img" alt="">
+            <div class="edition-body">
+              <p class="edition-title">THE BEGIN COLLECTION</p>
+              <button class="btn btn-view">View Products →</button>
             </div>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
-          <div class="edition-card-hero">
-            <img src="/image/mobile.png" class="edition-img-hero" alt="">
-            <div class="edition-body-hero">
-              <p class="edition-title-hero">THE MOBILE COLLECTION</p>
-              <button class="btn btn-view-hero">View Products →</button>
+          <div class="edition-card">
+            <img src="/image/mobile.png" class="edition-img" alt="">
+            <div class="edition-body">
+              <p class="edition-title">THE MOBILE COLLECTION</p>
+              <button class="btn btn-view">View Products →</button>
             </div>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
-          <div class="edition-card-hero">
-            <img src="image/mobile.png" class="edition-img-hero" alt="">
-            <div class="edition-body-hero">
-              <p class="edition-title-hero">THE URBAN COLLECTION</p>
-              <button class="btn btn-view-hero">View Products →</button>
+          <div class="edition-card">
+            <img src="image/mobile.png" class="edition-img" alt="">
+            <div class="edition-body">
+              <p class="edition-title">THE URBAN COLLECTION</p>
+              <button class="btn btn-view">View Products →</button>
             </div>
           </div>
         </div>
       </div>
-      <button class="btn btn-outline-dark rounded-pill px-4 py-2 view-all-btn-hero">
+      <button class="btn btn-outline-dark rounded-pill px-4 py-2 view-all-btn">
         View All
       </button>
     </div>
   </section>
 
   <!-- BANNER SECTION -->
-  <div class="container-hero my-4">
-    <div class="banner-hero-section">
-      <div class="side-text-hero side-left-hero">
+  <div class="container my-4">
+    <div class="banner-section">
+      <div class="side-text side-left">
         <span>NEW</span><span>NEW</span><span>NEW</span><span>NEW</span>
         <span>NEW</span><span>NEW</span><span>NEW</span><span>NEW</span>
       </div>
-      <div class="hero-text-banner">
+      <div>
         <div class="banner-title-big">WE CRUSHED SOMETHING</div>
         <div class="banner-title-small">RELIVE KNITS RENEW</div>
         <div class="banner-subtext">made from recycled plastic bottles</div>
-        <button class="cta-hero-btn">GET YOURS NOW</button>
+        <button class="cta-btn">GET YOURS NOW</button>
       </div>
-      <div class="side-text-hero side-right-hero">
+      <div class="side-text side-right">
         <span>NEW</span><span>NEW</span><span>NEW</span><span>NEW</span>
         <span>NEW</span><span>NEW</span><span>NEW</span><span>NEW</span>
       </div>
-      <img src="image/laptop2.jpg" class="product-img-hero" id="productImg">
+      <img src="image/laptop2.jpg" class="product-img" id="productImg">
     </div>
   </div>
   <div id="footer"></div>
@@ -605,113 +604,36 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <script>
-    // Load navbar and footer with proper initialization
-    function loadNavbar() {
-      fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('navbar').innerHTML = data;
-          // Initialize navbar functionality after loading
-          initializeNavbarFunctionality();
-        })
-        .catch(error => console.error('Error loading navbar:', error));
-    }
-    
-    function initializeNavbarFunctionality() {
-      // Initialize dropdown functionality
-      const dropdowns = document.querySelectorAll('.mega-dropdown-wrapper');
-      dropdowns.forEach(dropdown => {
-        const trigger = dropdown.querySelector('.nav-link-item');
-        const menu = dropdown.querySelector('.mega-menu');
-        
-        if (trigger && menu) {
-          trigger.addEventListener('mouseenter', () => {
-            menu.classList.add('show');
-          });
-          
-          dropdown.addEventListener('mouseleave', () => {
-            menu.classList.remove('show');
-          });
-        }
-      });
-      
-      // Initialize slider functionality
-      initializeSlider();
-      
-      // Initialize countdown
-      initializeCountdown();
-    }
-    
-    function initializeSlider() {
-      const sliderTrack = document.getElementById('sliderTrack');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      
-      if (sliderTrack && prevBtn && nextBtn) {
-        let scrollAmount = 0;
-        const scrollStep = 200;
-        
-        nextBtn.addEventListener('click', () => {
-          scrollAmount += scrollStep;
-          sliderTrack.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-        });
-        
-        prevBtn.addEventListener('click', () => {
-          scrollAmount -= scrollStep;
-          if (scrollAmount < 0) scrollAmount = 0;
-          sliderTrack.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-        });
+    // Countdown timer
+    var countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 30);
+
+    var timer = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var s = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerHTML = d < 10 ? '0' + d : d;
+      document.getElementById('hours').innerHTML = h < 10 ? '0' + h : h;
+      document.getElementById('minutes').innerHTML = m < 10 ? '0' + m : m;
+      document.getElementById('seconds').innerHTML = s < 10 ? '0' + s : s;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById('days').innerHTML = '00';
+        document.getElementById('hours').innerHTML = '00';
+        document.getElementById('minutes').innerHTML = '00';
+        document.getElementById('seconds').innerHTML = '00';
       }
-    }
-    
-    function initializeCountdown() {
-      var countDownDate = new Date();
-      countDownDate.setDate(countDownDate.getDate() + 30);
-
-      var timer = setInterval(function () {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-
-        var d = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var s = Math.floor((distance % (1000 * 60)) / 1000);
-
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
-        
-        if (daysEl) daysEl.innerHTML = d < 10 ? '0' + d : d;
-        if (hoursEl) hoursEl.innerHTML = h < 10 ? '0' + h : h;
-        if (minutesEl) minutesEl.innerHTML = m < 10 ? '0' + m : m;
-        if (secondsEl) secondsEl.innerHTML = s < 10 ? '0' + s : s;
-
-        if (distance < 0) {
-          clearInterval(timer);
-          if (daysEl) daysEl.innerHTML = '00';
-          if (hoursEl) hoursEl.innerHTML = '00';
-          if (minutesEl) minutesEl.innerHTML = '00';
-          if (secondsEl) secondsEl.innerHTML = '00';
-        }
-      }, 1000);
-    }
-    
-    // Load navbar on page load
-    loadNavbar();
-    
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading footer:', error));
-
-
+    }, 1000);
 
     // Slider functionality
     let index = 0;
-    const slides = document.querySelectorAll(".slide-hero");
+    const slides = document.querySelectorAll(".slide");
     const slidesBox = document.getElementById("slides");
     const total = slides.length;
 
@@ -741,26 +663,19 @@
       img.style.transform = `translate(${x}px, ${y}px)`;
     });
   </script>
-  <script>
-    // Tab switching functionality for mega menu
-    function switchTab(tabId, button) {
-      // Remove active class from all buttons
-      const buttons = button.parentElement.querySelectorAll('.btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      
-      // Add active class to clicked button
-      button.classList.add('active');
-      
-      // Hide all tab panes
-      const tabPanes = button.closest('.mega-menu').querySelectorAll('.tab-pane-custom');
-      tabPanes.forEach(pane => pane.classList.add('d-none'));
-      
-      // Show selected tab pane
-      const selectedPane = document.getElementById(tabId + 'Tab');
-      if (selectedPane) {
-        selectedPane.classList.remove('d-none');
-      }
+   <script>
+    function loadComponent(id, file) {
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(id).innerHTML = data;
+        })
+        .catch(error => console.error("Error loading " + file, error));
     }
+
+    // Load components
+    loadComponent("navbar", "navbar.html");
+    loadComponent("footer", "footer.html");
   </script>
 
 

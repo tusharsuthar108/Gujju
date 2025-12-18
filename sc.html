@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neeman Style Category Slider</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      }
+
+      .slider-track {
+        display: flex;
+        gap: 16px;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      .category-card {
+        flex: 0 0 auto;
+        width: 150px;
+        border-radius: 22px;
+        padding: 22px 10px;
+        transition: all 0.3s ease;
+      }
+
+      .category-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.12);
+      }
+
+      .category-image {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        padding: 8px;
+      }
+
+      .category-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .slider-nav {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid #d9d9d9;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+
+      .slider-nav:hover {
+        border-color: #999;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .slider-nav.disabled {
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .slider-nav.prev { left: -20px; }
+      .slider-nav.next { right: -20px; }
+
+      @media (max-width: 768px) {
+        .category-card { width: 130px; }
+        .category-image { width: 90px; height: 90px; }
+        .slider-nav.prev { left: -5px; }
+        .slider-nav.next { right: -5px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="py-5 bg-white">
+      <div class="container-fluid position-relative" style="max-width: 1400px;">
+        
+        <!-- Previous Button -->
+        <button class="slider-nav prev position-absolute top-50 translate-middle-y bg-white d-flex align-items-center justify-content-center border cursor-pointer" id="prevBtn">
+          <svg width="22" height="22" viewBox="0 0 24 24">
+            <path d="M15 6l-1.4-1.4L7 12l6.6 7.4L15 18l-5-6z" />
+          </svg>
+        </button>
+
+        <div class="slider-track py-2" id="sliderTrack">
+          
+          <!-- New Launch -->
+          <div class="category-card bg-white border-2 border-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/offers2.avif" />
+            </div>
+            <div class="fw-bold mt-2" style="color: #009944; font-size: 15px;">New Launches</div>
+          </div>
+
+          <!-- Limited -->
+          <div class="category-card bg-white border-2 border-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/offers3.avif" />
+            </div>
+            <div class="fw-bold mt-2" style="color: #cc0000; font-size: 15px;">Limited Stock</div>
+          </div>
+
+          <!-- Regular Cards -->
+          <div class="category-card bg-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/offers4.avif" />
+            </div>
+            <div class="fw-semibold mt-2 text-dark" style="font-size: 14px;">Begin Walk</div>
+          </div>
+
+          <div class="category-card bg-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/man1.avif" />
+            </div>
+            <div class="fw-semibold mt-2 text-dark" style="font-size: 14px;">Men</div>
+          </div>
+
+          <div class="category-card bg-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/woman1.avif" />
+            </div>
+            <div class="fw-semibold mt-2 text-dark" style="font-size: 14px;">Women</div>
+          </div>
+
+          <div class="category-card bg-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/Sneakers_women.webp" />
+            </div>
+            <div class="fw-semibold mt-2 text-dark" style="font-size: 14px;">Sneakers</div>
+          </div>
+
+          <div class="category-card bg-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/Sneakers_women.webp" />
+            </div>
+            <div class="fw-semibold mt-2 text-dark" style="font-size: 14px;">Slip Ons</div>
+          </div>
+
+          <div class="category-card bg-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/Sneakers_women.webp" />
+            </div>
+            <div class="fw-semibold mt-2 text-dark" style="font-size: 14px;">Loafers</div>
+          </div>
+
+          <div class="category-card bg-white text-center cursor-pointer">
+            <div class="category-image bg-white mx-auto d-flex justify-content-center align-items-center overflow-hidden">
+              <img src="/images/Sneakers_women.webp" />
+            </div>
+            <div class="fw-semibold mt-2 text-dark" style="font-size: 14px;">Oxfords</div>
+          </div>
+        </div>
+
+        <!-- Next Button -->
+        <button class="slider-nav next position-absolute top-50 translate-middle-y bg-white d-flex align-items-center justify-content-center border cursor-pointer" id="nextBtn">
+          <svg width="22" height="22" viewBox="0 0 24 24">
+            <path d="M9 6l1.4-1.4L17 12l-6.6 7.4L9 18l5-6z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const sliderTrack = document.getElementById("sliderTrack");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      const scrollAmount = 450;
+
+      function updateButtons() {
+        const maxScroll = sliderTrack.scrollWidth - sliderTrack.clientWidth;
+        prevBtn.classList.toggle("disabled", sliderTrack.scrollLeft <= 0);
+        nextBtn.classList.toggle("disabled", sliderTrack.scrollLeft >= maxScroll - 1);
+      }
+
+      nextBtn.onclick = () => {
+        sliderTrack.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        setTimeout(updateButtons, 400);
+      };
+
+      prevBtn.onclick = () => {
+        sliderTrack.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        setTimeout(updateButtons, 400);
+      };
+
+      sliderTrack.addEventListener("scroll", updateButtons);
+      updateButtons();
+    </script>
+  </body>
+</html>
